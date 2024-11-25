@@ -5,8 +5,8 @@ const router = express.Router();
 // Get all Education
 router.get('/', async (req, res) => {
     try {
-        const education = await Education.find();
-        res.json(education);
+        const educations = await Education.find();
+        res.json(educations);
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 
   // Update an Education by ID
 router.put('/:id', async (req, res) => {
-    console.log("Update request received for ID:", req.params.id); // Debugging log
+    
     try {
       const updatedEducation = await Education.findByIdAndUpdate(req.params.id, req.body, { new: true });
       res.json(updatedEducation);
@@ -35,7 +35,7 @@ router.put('/:id', async (req, res) => {
   
   // Delete an Education by ID
   router.delete('/:id', async (req, res) => {
-    console.log("Delete request received for ID:", req.params.id); // Debugging log
+    
     try {
       await Education.findByIdAndDelete(req.params.id);
       res.json({ message: 'Education deleted' });
