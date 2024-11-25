@@ -1,11 +1,9 @@
 {
   "name": "portfolio-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node --watch server.js",
-    "build": "ng build --configuration production",
-    "postinstall": "npm run build",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
